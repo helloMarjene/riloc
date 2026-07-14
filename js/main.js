@@ -28,18 +28,49 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
   }
 
-  /* Mobile dropdown toggles */
-  const dropdownTriggers = document.querySelectorAll('.nav-links > li');
-  dropdownTriggers.forEach(li => {
+  /* ============================================================
+     DROPDOWN TOGGLES — Works on BOTH desktop AND mobile
+     ============================================================ */
+  const dropdownItems = document.querySelectorAll('.nav-links > li');
+
+  dropdownItems.forEach(li => {
     const trigger = li.querySelector('.nav-link-text');
-    if (trigger) {
-      trigger.addEventListener('click', (e) => {
-        if (window.innerWidth <= 1140) {
-          e.preventDefault();
-          li.classList.toggle('dropdown-open');
-        }
+    if (!trigger) return;
+
+    trigger.addEventListener('click', (e) => {
+      // On mobile (<=1140px), the menu is a sidebar — always toggle
+      // On desktop (>1140px), hover already shows the menu, but we also
+      // allow click to keep it open (and toggle) for accessibility
+
+      const isMobile = window.innerWidth <= 1140;
+
+      if (isMobile) {
+        e.preventDefault(); // Prevent any default span behavior
+        e.stopPropagation(); // Stop bubbling
+      }
+
+      // Close all other dropdowns first
+      dropdownItems.forEach(otherLi => {
+        if (otherLi !== li) otherLi.classList.remove('dropdown-open');
       });
+
+      // Toggle this one
+      li.classList.toggle('dropdown-open');
+    });
+  });
+
+  // Close dropdowns when clicking outside the nav
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.riloc-nav')) {
+      dropdownItems.forEach(li => li.classList.remove('dropdown-open'));
     }
+  });
+
+  // Close dropdowns when clicking a dropdown link (navigate away)
+  document.querySelectorAll('.dropdown-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      dropdownItems.forEach(li => li.classList.remove('dropdown-open'));
+    });
   });
 
   /* Back to top */
