@@ -17,53 +17,28 @@
 <body>
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<nav class="riloc-nav" aria-label="Primary navigation">
+<nav class="riloc-nav nav-transparent-allowed" aria-label="Primary navigation">
   <div class="container-xl">
-    <a href="../index.html" class="brand"><span class="mark"><i class="fa-solid fa-hands-holding-child"></i></span> RILOC</a>
+    <a href="index.html" class="brand" style="gap:14px;">
+      <img src="riloc-logo.png" alt="RILOC" class="brand-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="mark" style="display:none;"><i class="fa-solid fa-hands-holding-child"></i></span>
+      RILOC
+    </a>
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
     <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li>
-        <span class="nav-link-text">About <i class="fa-solid fa-chevron-down dropdown-arrow"></i></span>
-        <div class="dropdown-menu">
-          <a href="about.html">Our Story</a>
-          <a href="about.html#mission-vision">Mission &amp; Vision</a>
-          <a href="about.html#values">Core Values</a>
-          <a href="about.html#leadership">Leadership</a>
-          <a href="about.html#timeline">Our Journey</a>
-        </div>
-      </li>
-      <li>
-        <span class="nav-link-text">Programs <i class="fa-solid fa-chevron-down dropdown-arrow"></i></span>
-        <div class="dropdown-menu">
-          <div class="dropdown-header">By Category</div>
-          <a href="programs.html#community-development">Community Development</a>
-          <a href="programs.html#youth-education">Youth &amp; Education</a>
-          <a href="programs.html#workforce-development">Workforce Development</a>
-          <a href="programs.html#health-wellness">Health &amp; Wellness</a>
-          <a href="programs.html#civic-advocacy">Civic &amp; Advocacy</a>
-          <div class="dropdown-divider"></div>
-          <a href="programs.html">View All Programs</a>
-        </div>
-      </li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><span class="nav-link-text">About <i class="fa-solid fa-chevron-down dropdown-arrow"></i></span><div class="dropdown-menu"><a href="about.html">Our Story</a><a href="about.html#mission-vision">Mission &amp; Vision</a><a href="about.html#values">Core Values</a><a href="about.html#leadership">Leadership</a><a href="about.html#timeline">Our Journey</a></div></li>
+      <li><span class="nav-link-text">Programs <i class="fa-solid fa-chevron-down dropdown-arrow"></i></span><div class="dropdown-menu"><div class="dropdown-header">By Category</div><a href="programs.html#community-development">Community Development</a><a href="programs.html#youth-education">Youth &amp; Education</a><a href="programs.html#workforce-development">Workforce Development</a><a href="programs.html#health-wellness">Health &amp; Wellness</a><a href="programs.html#civic-advocacy">Civic &amp; Advocacy</a><div class="dropdown-divider"></div><a href="programs.html">View All Programs</a></div></li>
       <li><a href="departments.html">Departments</a></li>
       <li><a href="impact.html">Impact</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="resources.html">Resources</a></li>
-      <li>
-        <span class="nav-link-text">Get Involved <i class="fa-solid fa-chevron-down dropdown-arrow"></i></span>
-        <div class="dropdown-menu">
-          <a href="volunteer.html">Volunteer</a>
-          <a href="partners.html">Partner With Us</a>
-          <a href="contact.html#donate">Donate</a>
-          <a href="contact.html">Contact Us</a>
-        </div>
-      </li>
+      <li><span class="nav-link-text">Get Involved <i class="fa-solid fa-chevron-down dropdown-arrow"></i></span><div class="dropdown-menu"><a href="pages/volunteer.html">Volunteer</a><a href="pages/partners.html">Partner With Us</a><a href="pages/contact.html#donate">Donate</a><a href="pages/contact.html">Contact Us</a></div></li>
     </ul>
     <div class="nav-actions">
       <button class="icon-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <button class="lang-pill">EN <i class="fa-solid fa-chevron-down" style="font-size:.6rem;margin-left:4px;"></i></button>
+      <button class="lang-pill" aria-label="Choose language">EN <i class="fa-solid fa-chevron-down" style="font-size:.6rem;margin-left:4px;"></i></button>
       <a href="contact.html#donate" class="btn btn-primary btn-sm">Donate</a>
     </div>
   </div>
